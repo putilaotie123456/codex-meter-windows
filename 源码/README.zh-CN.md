@@ -1,8 +1,8 @@
-# CodexMeter for Windows v0.1.4
+# CodexMeter for Windows v1.0.0
 
 这是 `xumanba/codex-meter` 的 Windows 原生改编版。它保留了上游的悬浮玻璃卡片交互，但将 SwiftUI/AppKit 界面替换成不需要额外 NuGet 包的 WinForms 单文件程序。
 
-本仓库仅提供 Windows v0.1.4，下载入口见 [`README.md`](../README.md)。这里保留原项目的 Windows 运行时代码和许可，不包含 Mac 源码或旧版本程序。
+本仓库仅维护 Windows，当前版本为 v1.0.0，下载入口见 [`README.md`](../README.md)。本次基于 v0.1.4 统一版本编号，功能和界面不变，保留原项目与依赖的许可；不包含 Mac 源码，版本目录、标签和 Release 仅提供当前版本。
 
 ## 已实现功能
 
@@ -54,7 +54,7 @@
 源码\dist\CodexMeter.exe
 ```
 
-也可以从 Releases 页面下载 `Codex-Meter-Windows-portable-v0.1.4.zip`。必须完整解压，进入 `CodexMeter Windows v0.1.4` 文件夹后再运行 `CodexMeter.exe`；不需要另外安装 Win-CodexBar。
+也可以从 Releases 页面下载 `Codex-Meter-Windows-portable-v1.0.0.zip`。必须完整解压，进入 `CodexMeter Windows v1.0.0` 文件夹后再运行 `CodexMeter.exe`；不需要另外安装 Win-CodexBar。
 
 直接运行默认不会写注册表或添加开机启动项；只有在菜单中主动勾选“开机自启动”时，才会写入当前用户启动项。界面设置保存在：
 
@@ -105,10 +105,10 @@ Windows 模块和数据流说明见 [`ARCHITECTURE.md`](ARCHITECTURE.md)。
 
 构建脚本使用 Windows 自带的 .NET Framework C# 编译器，不会下载依赖。源码按文件名稳定排序；生产 EXE 会在构建阶段明确排除测试入口 `TestProgram.cs`。构建还会验证 `源码\vendor\codexbar-cli.exe` 的固定 SHA-256，任何缺失或不匹配都会直接失败。输出位于 `源码\dist`。
 
-生成经过测试、带顶层文件夹并附 SHA-256 的 v0.1.4 Release 便携包：
+生成经过测试、带顶层文件夹并附 SHA-256 的 v1.0.0 Release 便携包：
 
 ```powershell
-.\源码\package-release.ps1 -Version 0.1.4
+.\源码\package-release.ps1 -Version 1.0.0
 ```
 
 验证解析器：

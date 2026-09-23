@@ -1,7 +1,12 @@
-CodexMeter for Windows v0.1.4
+CodexMeter for Windows v1.0.0
 ==================================================
 
-v0.1.4 重置历史更新：
+v1.0.0 版本说明：
+基于 Windows v0.1.4 统一版本编号，EXE 文件版本为 1.0.0.0。
+本次不改变功能、界面、安装路径、用户设置和内置 CLI。
+安装包已重新编译，请使用 v1.0.0 对应的 SHA-256 校验文件。
+
+重置历史功能：
 点击重置倒计时直接打开时间轴；“查看历史时间”切换到可滚轮浏览的
 历史记录列表，“返回时间轴”切回时间轴。
 重置时间轴延伸到今天，连续无记录的日期也保留每日刻度。
@@ -55,6 +60,10 @@ Windows 独有功能：实时上传/下载网速，以及最小化到系统托�
 
 English installation
 --------------------
+
+v1.0.0 updates version metadata and packaging from Windows v0.1.4.
+Features, interface, installation paths, user data and the bundled CLI are unchanged.
+The executable file version is 1.0.0.0; verify the rebuilt ZIP with its own checksum.
 
 1. Requires Windows 10/11 and .NET Framework 4.7.2 or newer.
 2. Sign in to the Codex desktop app first, or run `codex login`.

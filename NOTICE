@@ -1,4 +1,4 @@
-CodexMeter for Windows v0.1.4
+CodexMeter for Windows v1.0.0
 
 This Windows-only distribution is derived from xumanba/codex-meter:
 https://github.com/xumanba/codex-meter
@@ -8,12 +8,16 @@ The original MIT license is preserved in LICENSE and 源码/LICENSE.
 
 Windows source was extracted from win/源码 in the platform-layout snapshot
 8f9ea39b00060bdba6e7fb50b380d1154a58f91a, subsequently merged upstream as
-ff69332cfaad41743cb20e14573b31d490ae1d71. Its C# runtime code is unchanged.
-Only Windows v0.1.4 is distributed here. No macOS application or source is
-included, and the upstream repository is not modified by this publication.
+ff69332cfaad41743cb20e14573b31d490ae1d71. Version v1.0.0 updates assembly and
+manifest versions, packaging configuration and documentation from v0.1.4.
+Application behavior and bundled dependencies are unchanged. Only Windows
+is maintained here; no macOS application or source is included, and the
+upstream repository is not modified by this publication.
 
-The original Windows v0.1.4 release archive is redistributed without changes.
-Its SHA-256 is:
+The v1.0.0 archive is rebuilt from this repository and has its own checksum.
+The source version was Windows v0.1.4. Only v1.0.0 is offered in this
+repository's release and version indexes. For provenance, the original
+upstream Windows v0.1.4 archive had SHA-256:
 007fb74196abbbe6de7f801a54b1e5b99c77516f1779eb40633c3be96e893df0
 
 The Windows package includes Win-CodexBar CLI 0.45.2:
@@ -23,9 +27,10 @@ CodexBar attribution and its full license are also preserved:
 https://github.com/steipete/CodexBar
 源码/ThirdPartyLicenses/CodexBar-LICENSE.txt
 
-The original combined upstream attribution notice is retained verbatim in
-源码/NOTICE for provenance. References there to macOS dependencies describe
-the upstream project, not additional software shipped by this repository.
+The original combined upstream attribution notice is retained in 源码/NOTICE
+after a current Windows distribution note. References there to macOS
+dependencies describe the upstream project, not additional software shipped
+by this repository.
 
 CodexMeter is an independent, unofficial application and is not affiliated
 with or endorsed by OpenAI, CodexBar, or their respective trademark owners.

@@ -44,7 +44,7 @@ jobs:
 
       - name: Validate Windows portable package
         shell: pwsh
-        run: .\源码\package-release.ps1 -Version 0.1.4
+        run: .\源码\package-release.ps1 -Version 1.0.0
 
       - name: Upload unsigned test build
         uses: actions/upload-artifact@v4
@@ -57,6 +57,6 @@ jobs:
             源码/qa/preview-budget-hover.png
             源码/qa/preview-reset-history-list.png
             源码/qa/preview-reset-history-timeline.png
-            源码/Codex-Meter-Windows-portable-v0.1.4.zip
-            源码/Codex-Meter-Windows-portable-v0.1.4.zip.sha256
+            源码/Codex-Meter-Windows-portable-v1.0.0.zip
+            源码/Codex-Meter-Windows-portable-v1.0.0.zip.sha256
           if-no-files-found: error

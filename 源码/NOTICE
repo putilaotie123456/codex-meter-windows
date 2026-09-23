@@ -1,3 +1,14 @@
+CodexMeter for Windows v1.0.0
+Project: https://github.com/putilaotie123456/codex-meter-windows
+Derived from: https://github.com/xumanba/codex-meter (Windows v0.1.4)
+
+Version v1.0.0 changes version metadata, packaging and documentation only.
+The package includes Win-CodexBar CLI 0.45.2 and the original MIT licenses.
+No macOS software is bundled. The original upstream notice below is kept
+for provenance; its macOS references describe the upstream distribution.
+
+Original upstream notice
+------------------------
 CodexMeter is an independent, unofficial application powered by CodexBar.
 
 Windows v0.1.4 packages include the Win-CodexBar 0.45.2 standalone console CLI

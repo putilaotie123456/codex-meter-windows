@@ -1,0 +1,8 @@
+/.publish/
+/源码/dist/
+/源码/qa/
+/源码/release-stage-v*/
+/源码/Codex-Meter-Windows-portable-v*.zip
+/源码/Codex-Meter-Windows-portable-v*.zip.sha256
+*.user
+*.suo

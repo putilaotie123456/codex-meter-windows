@@ -1,0 +1,62 @@
+name: Windows CI
+
+on:
+  push:
+    paths:
+      - "源码/**"
+      - ".github/workflows/windows.yml"
+  pull_request:
+    paths:
+      - "源码/**"
+      - ".github/workflows/windows.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build Windows application
+        shell: pwsh
+        run: .\源码\build.ps1
+
+      - name: Run self-tests
+        shell: pwsh
+        run: .\源码\dist\CodexMeter.Tests.exe
+
+      - name: Render interface regression previews
+        shell: pwsh
+        run: |
+          .\源码\dist\CodexMeter.Tests.exe --preview-status-hover .\源码\qa\preview-status-hover.png
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          .\源码\dist\CodexMeter.Tests.exe --preview-hover .\源码\qa\preview-budget-hover.png
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          .\源码\dist\CodexMeter.Tests.exe --preview-reset-history .\源码\qa\preview-reset-history-list.png list
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          .\源码\dist\CodexMeter.Tests.exe --preview-reset-history .\源码\qa\preview-reset-history-timeline.png timeline
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Validate Windows portable package
+        shell: pwsh
+        run: .\源码\package-release.ps1 -Version 0.1.4
+
+      - name: Upload unsigned test build
+        uses: actions/upload-artifact@v4
+        with:
+          name: CodexMeter-Windows-unsigned
+          path: |
+            源码/dist/CodexMeter.exe
+            源码/dist/CodexMeter.exe.config
+            源码/qa/preview-status-hover.png
+            源码/qa/preview-budget-hover.png
+            源码/qa/preview-reset-history-list.png
+            源码/qa/preview-reset-history-timeline.png
+            源码/Codex-Meter-Windows-portable-v0.1.4.zip
+            源码/Codex-Meter-Windows-portable-v0.1.4.zip.sha256
+          if-no-files-found: error
